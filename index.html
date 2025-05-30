@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Delights - Premium Dining Experience</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Moul&family=Moulpali&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3170/3170733.png">
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #f1faee;
+            --accent-color: #a8dadc;
+            --dark-color: #1d3557;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #777;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Moul', serif;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .model-style {
+            font-family: 'Moulpali', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image img {
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Menu Section */
+        .menu {
+            background-color: var(--secondary-color);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-title h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+        }
+
+        .menu-item-price {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .menu-item-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--secondary-color);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            width: 100%;
+        }
+
+        .testimonial.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .contact-info-text p {
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .language-option {
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-option.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .animate.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3170/3170733.png" alt="Savory Delights Logo" id="logo-img">
+                    <span class="logo-text">Savory Delights</span>
+                </a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" data-en="Home" data-kh="ទំព័រដើម" class="nav-link">Home</a></li>
+                    <li><a href="#about" data-en="About" data-kh="អំពី" class="nav-link">About</a></li>
+                    <li><a href="#menu" data-en="Menu" data-kh="ម៉ឺនុយ" class="nav-link">Menu</a></li>
+                    <li><a href="#gallery" data-en="Gallery" data-kh="វិចិត្រសាល" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" data-en="Contact" data-kh="ទំនាក់ទំនង" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="model-style" data-en="Savory Delights" data-kh="ភោជនីយដ្ឋាន សេវ៉ាឌីលាយ">Savory Delights</h1>
+                <p data-en="Experience the finest culinary delights in a cozy atmosphere" data-kh="សូមរីករាយជាមួយម្ហូបអាហារដ៏ឆ្ងាញ់ពិសារក្នុងបរិយាកាសស្រស់ស្រាយ">Experience the finest culinary delights in a cozy atmosphere</p>
+                <a href="#menu" class="btn" data-en="View Menu" data-kh="មើលម៉ឺនុយ">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Story" data-kh="រឿងរ៉ាវរបស់យើង">Our Story</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text animate">
+                    <h3 data-en="A Culinary Journey" data-kh="ដំណើរនៃការចម្អិនអាហារ">A Culinary Journey</h3>
+                    <p data-en="Founded in 2010, Savory Delights has been serving authentic and innovative dishes that celebrate local flavors with a modern twist. Our chefs bring years of experience and passion to every plate." data-kh="បង្កើតឡើងនៅឆ្នាំ២០១០ ភោជនីយដ្ឋាន Savory Delights បានផ្តល់នូវមុខម្ហូបដ៏ពិសេស ដែលផ្សំឡើងពីរសជាតិអាហារដ៏ឆ្ងាញ់ពិសារជាមួយនឹងវិធីសាកសួរទំនើប។ ចុងភៅរបស់យើងមានបទពិសោធន៍យូរឆ្នាំ និងការខិតខំប្រឹងប្រែងក្នុងការបំពាក់អាហារគ្រប់មុខ។">Founded in 2010, Savory Delights has been serving authentic and innovative dishes that celebrate local flavors with a modern twist. Our chefs bring years of experience and passion to every plate.</p>
+                    <p data-en="We source our ingredients from local farmers and suppliers who share our commitment to quality and sustainability. Every dish tells a story of tradition, innovation, and love for food." data-kh="យើងទិញវត្ថុធាតុដើមពីកសិករនិងអ្នកផ្គត់ផ្គង់ក្នុងស្រុកដែលមានគោលបំណងដូចគ្នាទៅនឹងគុណភាពនិងនិរន្តរភាព។ ម្ហូបអាហារគ្រប់មុខបានបង្ហាញពីរឿងរ៉ាវនៃប្រពៃណី ភាពច្នៃប្រឌិត និងសេចក្តីស្រឡាញ់ចំពោះអាហារ។">We source our ingredients from local farmers and suppliers who share our commitment to quality and sustainability. Every dish tells a story of tradition, innovation, and love for food.</p>
+                    <a href="#contact" class="btn" data-en="Reserve a Table" data-kh="កក់តុ">Reserve a Table</a>
+                </div>
+                <div class="about-image animate">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Menu" data-kh="ម៉ឺនុយរបស់យើង">Our Menu</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Appetizers -->
+                <div class="menu-item animate">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Spring Rolls">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 data-en="Spring Rolls" data-kh="ណែមក្រឡា">Spring Rolls</h3>
+                            <span class="menu-item-price">$6.99</span>
+                        </div>
+                        <p class="menu-item-desc" data-en="Crispy rolls filled with vegetables and served with sweet chili sauce" data-kh="ណែមក្រឡាឆ្ងាញ់ពិសារដែលពេញដោយបន្លែ និងបំពងឈីខ្លាំង">Crispy rolls filled with vegetables and served with sweet chili sauce</p>
+                    </div>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-item animate">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Grilled Salmon">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 data-en="Grilled Salmon" data-kh="ត្រីសាលម៉ុនដុត">Grilled Salmon</h3>
+                            <span class="menu-item-price">$18.99</span>
+                        </div>
+                        <p class="menu-item-desc" data-en="Fresh salmon fillet grilled to perfection with lemon butter sauce" data-kh="ត្រីសាលម៉ុនស្រស់ដែលត្រូវបានដុតយ៉ាងល្អឥតខ្ចោះជាមួយទឹកជ្រលក់ប៊ឺរនិងអំពិល">Fresh salmon fillet grilled to perfection with lemon butter sauce</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item animate">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Chocolate Lava Cake">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3 data-en="Chocolate Lava Cake" data-kh="នំសូកូឡាលាវ៉ា">Chocolate Lava Cake</h3>
+                            <span class="menu-item-price">$8.99</span>
+                        </div>
+                        <p class="menu-item-desc" data-en="Warm chocolate cake with a molten center, served with vanilla ice cream" data-kh="នំសូកូឡាក្តៅដែលមានសាច់ក្នុងរាវ បម្រើជាមួយការ៉េមវ៉ានីឡា">Warm chocolate cake with a molten center, served with vanilla ice cream</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Food Gallery" data-kh="វិចិត្រសាលអាហារ">Food Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item animate">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Food 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1381&q=80" alt="Food 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1510&q=80" alt="Food 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item animate">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1494&q=80" alt="Food 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="What Our Customers Say" data-kh="អ្វីដែលអតិថិជនរបស់យើងនិយាយ">What Our Customers Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text" data-en="The best dining experience I've had in years! The food was exquisite and the service was impeccable." data-kh="ជាបទពិសោធន៍អាហារដ៏ល្អបំផុតដែលខ្ញុំបានទទួលក្នុងរយៈពេលច្រើនឆ្នាំ! អាហារមានរសជាតិឆ្ងាញ់ពិសារ ហើយសេវាកម្មគ្មានខ្ចោះ។">The best dining experience I've had in years! The food was exquisite and the service was impeccable.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p data-en="Food Critic" data-kh="អ្នកវាយតម្លៃអាហារ">Food Critic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text" data-en="Every dish is a masterpiece. The flavors are perfectly balanced and the presentation is stunning." data-kh="ម្ហូបអាហារគ្រប់មុខគឺជាស្នាដៃ។ រសជាតិមានលំនឹងល្អ ហើយការរៀបចំគឺស្រស់ស្អាត។">Every dish is a masterpiece. The flavors are perfectly balanced and the presentation is stunning.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p data-en="Regular Customer" data-kh="អតិថិជនធម្មតា">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text" data-en="The ambiance is perfect for a romantic dinner. We'll definitely be coming back!" data-kh="បរិយាកាសល្អឥតខ្ចោះសម្រាប់អាហារពេលល្ងាចដ៏ពេញនិយម។ យើងពិតជានឹងត្រលប់មកវិញជាមិនខាន!">The ambiance is perfect for a romantic dinner. We'll definitely be coming back!</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p data-en="First-time Visitor" data-kh="អ្នកទស្សនាលើកដំបូង">First-time Visitor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Contact Us" data-kh="ទំនាក់ទំនងយើងខ្ញុំ">Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-info-item animate">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h3 data-en="Address" data-kh="អាសយដ្ឋាន">Address</h3>
+                            <p data-en="123 Culinary Street, Food District, Phnom Penh" data-kh="១២៣ ផ្លូវអាហារ សង្កាត់អាហារ រាជធានីភ្នំពេញ">123 Culinary Street, Food District, Phnom Penh</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item animate">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h3 data-en="Phone" data-kh="ទូរស័ព្ទ">Phone</h3>
+                            <p>+855 12 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item animate">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h3 data-en="Email" data-kh="អ៊ីមែល">Email</h3>
+                            <p>info@savorydelights.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item animate">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h3 data-en="Opening Hours" data-kh="ម៉ោងបើកដំណើរការ">Opening Hours</h3>
+                            <p data-en="Monday - Sunday: 10:00 AM - 10:00 PM" data-kh="ច័ន្ទ - អាទិត្យ៖ ១០:០០ព្រឹក - ១០:០០ល្ងាច">Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form animate">
+                    <form id="reservation-form">
+                        <div class="form-group">
+                            <label for="name" data-en="Your Name" data-kh="ឈ្មោះរបស់អ្នក">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Your Email" data-kh="អ៊ីមែលរបស់អ្នក">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone Number" data-kh="លេខទូរស័ព្ទ">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date" data-en="Reservation Date" data-kh="កាលបរិច្ឆេទកក់តុ">Reservation Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Special Requests" data-kh="សំណើពិសេស">Special Requests</label>
+                            <textarea id="message" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-en="Make Reservation" data-kh="កក់តុឥឡូវនេះ">Make Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-en="About Us" data-kh="អំពីយើង">About Us</h3>
+                    <p data-en="Savory Delights offers a unique dining experience with a focus on quality ingredients, innovative recipes, and exceptional service." data-kh="Savory Delights ផ្តល់នូវបទពិសោធន៍អាហារដ៏ពិសេសដោយផ្តោតលើគុណភាពវត្ថុធាតុដើម រូបមន្តច្នៃប្រឌិត និងសេវាកម្មដ៏ល្អឥតខ្ចោះ។">Savory Delights offers a unique dining experience with a focus on quality ingredients, innovative recipes, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-kh="តំណភ្ជាប់រហ័ស">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-en="Home" data-kh="ទំព័រដើម">Home</a></li>
+                        <li><a href="#about" data-en="About" data-kh="អំពី">About</a></li>
+                        <li><a href="#menu" data-en="Menu" data-kh="ម៉ឺនុយ">Menu</a></li>
+                        <li><a href="#gallery" data-en="Gallery" data-kh="វិចិត្រសាល">Gallery</a></li>
+                        <li><a href="#contact" data-en="Contact" data-kh="ទំនាក់ទំនង">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-kh="ព័ត៌មាន">Newsletter</h3>
+                    <p data-en="Subscribe to our newsletter for updates and special offers." data-kh="ជាវព័ត៌មានរបស់យើងសម្រាប់ព័ត៌មានថ្មីៗ និងការផ្តល់ជូនពិសេស។">Subscribe to our newsletter for updates and special offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn" data-en="Subscribe" data-kh="ជាវ">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="credit-en">2025 - All rights reserved. Provide by Mr. Phekdey PHORN</p>
+                <p class="credit-kh" style="display: none;">2025 - រក្សារ​សិទ្ធិ​គ្រប់​យ៉ាង ដោយលោក ផន ភក្ដី។</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <div class="language-option active" data-lang="en">EN</div>
+        <div class="language-option" data-lang="kh">KH</div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to Top Button
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Testimonial Slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            let currentTestimonial = 0;
+
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentTestimonial = index;
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showTestimonial(index);
+                });
+            });
+
+            // Auto slide testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+
+            // Animation on Scroll
+            const animateElements = document.querySelectorAll('.animate');
+            
+            function checkAnimation() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkAnimation);
+            checkAnimation(); // Check on initial load
+
+            // Language Toggle
+            const languageOptions = document.querySelectorAll('.language-option');
+            
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update active language button
+                    languageOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Toggle between English and Khmer text
+                    document.querySelectorAll('[data-en], [data-kh]').forEach(element => {
+                        if (lang === 'en') {
+                            if (element.hasAttribute('data-en')) {
+                                element.textContent = element.getAttribute('data-en');
+                            }
+                        } else if (lang === 'kh') {
+                            if (element.hasAttribute('data-kh')) {
+                                element.textContent = element.getAttribute('data-kh');
+                            }
+                        }
+                    });
+                    
+                    // Toggle credits
+                    document.querySelector('.credit-en').style.display = lang === 'en' ? 'block' : 'none';
+                    document.querySelector('.credit-kh').style.display = lang === 'kh' ? 'block' : 'none';
+                    
+                    // Change logo text based on language
+                    const logoText = document.querySelector('.logo-text');
+                    if (lang === 'en') {
+                        logoText.textContent = 'Savory Delights';
+                    } else {
+                        logoText.textContent = 'សេវ៉ាឌីលាយ';
+                    }
+                });
+            });
+
+            // Form Submission
+            const reservationForm = document.getElementById('reservation-form');
+            reservationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const date = document.getElementById('date').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send this data to a server
+                console.log('Reservation Submitted:', { name, email, phone, date, message });
+                
+                // Show success message
+                const currentLang = document.querySelector('.language-option.active').getAttribute('data-lang');
+                const successMsg = currentLang === 'en' ? 
+                    'Thank you! Your reservation has been submitted. We will contact you shortly.' : 
+                    'សូមអរគុណ! ការកក់តុរបស់អ្នកត្រូវបានដាក់ស្នើ។ យើងនឹងទាក់ទងអ្នកឆាប៊ី។';
+                
+                alert(successMsg);
+                
+                // Reset form
+                reservationForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
